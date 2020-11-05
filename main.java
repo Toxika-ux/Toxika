@@ -14,7 +14,7 @@ public class main
 	  public static void main(String[] args) throws LoginException
 	  {
 	         @SuppressWarnings("unused")
-			 JDA builder = JDABuilder.createDefault("NzczNTE0MzE3MDQ3Mzk4NDYw.X6KVWA.Sm9f7_c3HynS1hT3jMdxB5pr0sU")
+			 JDA builder = JDABuilder.createDefault("Token")
 	         .setActivity(Activity.playing("a"))
 	         .addEventListeners(new Commands())
 	         .addEventListeners(new Clear())
