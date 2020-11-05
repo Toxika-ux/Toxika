@@ -1,3 +1,7 @@
+/*
+* apenas diz informação sobre o bot em forma de embed.
+*/
+
 package main.commands;
 
 import main.main;
