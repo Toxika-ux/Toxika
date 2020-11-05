@@ -1,3 +1,11 @@
+/*
+* Simples comando que deleta mensagens em um chat.
+* ele deleta a quantidades de mensagens especificadas no argumento 1 (args[1])
+* transforma em um integer e roda o comando,
+* porém se o numero for maior que 100, menor que 1 ou mais antigo que uma semana, ele ira dar um erro
+*/
+
+
 package main.commands;
 
 import java.util.List;
@@ -38,8 +46,8 @@ public class Clear extends ListenerAdapter {
 						
 						EmbedBuilder error = new EmbedBuilder();
 						error.setColor(0xff0000);
-						error.setTitle("🔴Muitas mensagens selecionadas");
-						error.addField("Infelizmente, o Discord apenas me deixa deletar de 1-100 ensagens de uma vez só.", "detalhes: java.lang.IllegalArgumentException: Message retrieval", false);
+						error.setTitle("🔴 Muitas mensagens selecionadas");
+						error.addField("Infelizmente, o Discord apenas me deixa deletar de 1-100 mensagens de uma vez só.", "detalhes: java.lang.IllegalArgumentException: Message retrieval", false);
 						event.getChannel().sendMessage(error.build()).queue();
 					}
 					else {
