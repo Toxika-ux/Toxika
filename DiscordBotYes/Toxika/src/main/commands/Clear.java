@@ -22,7 +22,7 @@ public class Clear extends ListenerAdapter {
 		
 		if (args[0].equalsIgnoreCase(main.prefix + "DeletarMensagens")) {
 			if (args.length < 2) {
-				// Usagem correta
+				// Usagem
 				EmbedBuilder usage = new EmbedBuilder();
 				usage.setColor(0xff3923);
 				usage.setTitle("Por favor especifique quantas mensagens eu irei deletar:");
