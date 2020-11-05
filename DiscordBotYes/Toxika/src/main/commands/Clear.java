@@ -22,7 +22,7 @@ public class Clear extends ListenerAdapter {
 		
 		if (args[0].equalsIgnoreCase(main.prefix + "DeletarMensagens")) {
 			if (args.length < 2) {
-				// Usage
+				// Usagem correta
 				EmbedBuilder usage = new EmbedBuilder();
 				usage.setColor(0xff3923);
 				usage.setTitle("Por favor especifique quantas mensagens eu irei deletar:");
@@ -34,7 +34,7 @@ public class Clear extends ListenerAdapter {
 					List<Message> messages = event.getChannel().getHistory().retrievePast(Integer.parseInt(args[1])).complete();
 					event.getChannel().deleteMessages(messages).queue();
 				
-					// if (Success)
+					// se a operação foi um sucesso:
 					EmbedBuilder success = new EmbedBuilder();
 					success.setColor(0x00ff00);
 					success.setTitle("✅ Sucesso ao deletar " + args[1] + " mensagens.");
@@ -42,7 +42,7 @@ public class Clear extends ListenerAdapter {
 				}
 				catch (IllegalArgumentException e) {
 					if (e.toString().startsWith("java.lang.IllegalArgumentException: Message retrieval")) {
-						// if (Too many messages)
+						// se a operação falhou pois o author da mensagem está tentando deletar mais do que 100:
 						
 						EmbedBuilder error = new EmbedBuilder();
 						error.setColor(0xff0000);
@@ -51,7 +51,7 @@ public class Clear extends ListenerAdapter {
 						event.getChannel().sendMessage(error.build()).queue();
 					}
 					else {
-						// if (Messages too old)
+						// se as mensagens foram mais antigas que 2 semanas
 						 
 						EmbedBuilder error = new EmbedBuilder();
 						error.setColor(0xff0000);
